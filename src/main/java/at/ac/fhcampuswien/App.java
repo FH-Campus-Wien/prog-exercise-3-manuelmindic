@@ -38,7 +38,6 @@ public class App {
         }
     }
 
-
     public static long[] lcg(long seed) {
         long m = ((long) Math.pow(2, 31));
         long a = 1103515245;
@@ -151,7 +150,7 @@ public class App {
         System.out.println();
 
         System.out.println("---- Number 3 ----");
-        guessingGame(1);
+        guessingGame(randomNumberBetweenOneAndHundred());
         System.out.println();
 
         System.out.println("---- Number 4 ----");

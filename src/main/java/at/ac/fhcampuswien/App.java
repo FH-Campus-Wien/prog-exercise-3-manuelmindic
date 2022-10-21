@@ -1,7 +1,5 @@
 package at.ac.fhcampuswien;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -43,14 +41,18 @@ public class App {
         long a = 1103515245;
         long c = 12345;
 
-        long[] arr1 = new long[11];
-        arr1[0] = seed;
+        long[] arr1 = new long[10];
+        arr1[0] = ((a*seed)+c)%m;
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i < 10; i++) {
             arr1[i] = ((a*arr1[i-1])+c)%m;
         }
 
-        return Arrays.copyOfRange(arr1,1,arr1.length);
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.println(arr1[i]);
+        }
+
+        return arr1;
     }
 
     public static void guessingGame(int numberToGuess) {
@@ -114,8 +116,7 @@ public class App {
                 sa[i] = 32;
             }
         }
-        String sol = String.valueOf(sa).replaceAll(" ","");
-        return sol;
+        return String.valueOf(sa).replaceAll(" ","");
     }
 
     public static int checkDigit(int[] arr1) {
